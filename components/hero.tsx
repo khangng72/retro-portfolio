@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, Mail, ExternalLink, ArrowDownToLine } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -27,11 +28,11 @@ export function Hero() {
       <div className="container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           <div className="font-mono text-sm text-muted-foreground mb-4">
-            {"> initializing portfolio..."}
+            {"> git checkout portfolio"}
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Nguyễn Hữu Khang
+            Nguyen Huu Khang
           </h1>
 
           <div className="font-mono text-xl md:text-2xl text-primary mb-8 h-8">
@@ -46,21 +47,29 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button
-              size="lg"
-              className="retro-glow retro-hover font-mono hover:cursor-pointer"
-            >
-              <ExternalLink className="mr-2 h-4 w-4" />
-              View My Work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="retro-hover font-mono bg-transparent hover:cursor-pointer"
-            >
-              <ArrowDownToLine className="mr-2 h-4 w-4" />
-              <span>Clone my Resume</span>
-            </Button>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  size="lg"
+                  className="retro-glow retro-hover font-mono hover:cursor-pointer"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View my works
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>Coming soon...</TooltipContent>
+            </Tooltip>
+
+            <a href="/cv/Huu_Khang_Resume.pdf" download>
+              <Button
+                variant="outline"
+                size="lg"
+                className="retro-hover font-mono bg-transparent hover:cursor-pointer"
+              >
+                <ArrowDownToLine className="mr-2 h-4 w-4" />
+                <span>git clone resume</span>
+              </Button>
+            </a>
           </div>
 
           <div className="flex items-center justify-center space-x-6">

@@ -1,39 +1,43 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Mail, Github, MapPin, Send } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, Github, MapPin, Send, Linkedin } from "lucide-react";
 
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+    console.log("Form submitted:", formData);
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="font-mono text-primary mb-8">{'> echo "Let\'s connect!" > contact.txt'}</div>
+          <div className="font-mono text-primary mb-8">
+            {'> git commit -m "Let\'s connect together"'}
+          </div>
 
           <h2 className="text-3xl font-bold mb-12">Get In Touch</h2>
 
@@ -49,7 +53,10 @@ export function Contact() {
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <Mail className="h-4 w-4 text-muted-foreground" />
-                    <a href="mailto:nhkhang.dev@gmail.com" className="text-primary hover:underline font-mono">
+                    <a
+                      href="mailto:nhkhang.dev@gmail.com"
+                      className="text-primary hover:underline font-mono"
+                    >
                       nhkhang.dev@gmail.com
                     </a>
                   </div>
@@ -57,12 +64,24 @@ export function Contact() {
                   <div className="flex items-center gap-3">
                     <Github className="h-4 w-4 text-muted-foreground" />
                     <a
-                      href="https://github.com/khangng720904473064"
+                      href="https://github.com/khangng72"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline font-mono"
                     >
-                      github.com/khangng720904473064
+                      https://github.com/khangng72
+                    </a>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <Linkedin className="h-4 w-4 text-muted-foreground" />
+                    <a
+                      href="https://www.linkedin.com/in/khang-nguyen-huu-ab4282257/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-mono"
+                    >
+                      https://www.linkedin.com/in/khang-nguyen-huu-ab4282257/
                     </a>
                   </div>
 
@@ -74,8 +93,9 @@ export function Contact() {
 
                 <div className="pt-4 border-t border-border">
                   <p className="text-muted-foreground text-sm leading-relaxed">
-                    I'm always interested in new opportunities and collaborations. Whether you have a project in mind or
-                    just want to chat about technology, feel free to reach out!
+                    I'm always interested in new opportunities and
+                    collaborations. Whether you have a project in mind or just
+                    want to chat about technology, feel free to reach out!
                   </p>
                 </div>
 
@@ -83,7 +103,9 @@ export function Contact() {
                   <div>$ whoami</div>
                   <div className="text-primary">Software Engineer</div>
                   <div>$ status</div>
-                  <div className="text-secondary">Available for opportunities</div>
+                  <div className="text-secondary">
+                    Available for opportunities
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -131,7 +153,10 @@ export function Contact() {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full retro-glow retro-hover font-mono">
+                  <Button
+                    type="submit"
+                    className="w-full retro-glow retro-hover font-mono"
+                  >
                     <Send className="mr-2 h-4 w-4" />
                     Send Message
                   </Button>
@@ -139,7 +164,9 @@ export function Contact() {
 
                 <div className="mt-4 font-mono text-xs text-muted-foreground">
                   <div>$ send_message --to khang --priority high</div>
-                  <div className="text-primary">Message queued for delivery...</div>
+                  <div className="text-primary">
+                    Message queued for delivery...
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -147,5 +174,5 @@ export function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

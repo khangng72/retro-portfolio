@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Code, Database, Wrench, Globe, Server, Palette } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Code, Database, Wrench, Globe, Server, Palette } from "lucide-react";
 
 export function Skills() {
   const skillCategories = [
@@ -12,17 +12,35 @@ export function Skills() {
     {
       title: "Frontend",
       icon: <Globe className="h-5 w-5" />,
-      skills: ["ReactJS", "NextJS", "Material UI", "Tailwind CSS", "TanStack Query"],
+      skills: [
+        "ReactJS",
+        "NextJS",
+        "Material UI",
+        "Tailwind CSS",
+        "TanStack Query",
+      ],
     },
     {
       title: "Backend",
       icon: <Server className="h-5 w-5" />,
-      skills: ["Java Spring Boot", "Quarkus", "Python FastAPI", "Spring Security", "Apache Kafka"],
+      skills: [
+        "Java Spring Boot",
+        "Quarkus",
+        "Python FastAPI",
+        "Spring Security",
+        "Apache Kafka",
+      ],
     },
     {
       title: "Database",
       icon: <Database className="h-5 w-5" />,
-      skills: ["PostgreSQL", "MongoDB", "Azure Cosmos DB", "Hibernate", "Flyway"],
+      skills: [
+        "PostgreSQL",
+        "MongoDB",
+        "Azure Cosmos DB",
+        "Hibernate",
+        "Flyway",
+      ],
     },
     {
       title: "Tools & DevOps",
@@ -32,15 +50,23 @@ export function Skills() {
     {
       title: "Other Skills",
       icon: <Palette className="h-5 w-5" />,
-      skills: ["Data Structures & Algorithms", "AI Research", "Database Design", "UML Diagrams", "LaTeX"],
+      skills: [
+        "Data Structures & Algorithms",
+        "AI Research",
+        "Database Design",
+        "UML Diagrams",
+        "LaTeX",
+      ],
     },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="font-mono text-primary mb-8">{"> cat skills.json | jq ."}</div>
+          <div className="font-mono text-primary mb-8">
+            {"> git checkout skills"}
+          </div>
 
           <h2 className="text-3xl font-bold mb-12">Technical Skills</h2>
 
@@ -73,7 +99,9 @@ export function Skills() {
           <div className="mt-12 text-center">
             <Card className="inline-block retro-hover">
               <CardContent className="p-6">
-                <div className="font-mono text-sm text-muted-foreground mb-2">{"> system.getOperatingSystems()"}</div>
+                <div className="font-mono text-sm text-muted-foreground mb-2">
+                  {"> system.getOperatingSystems()"}
+                </div>
                 <div className="flex flex-wrap justify-center gap-3">
                   <Badge variant="secondary" className="font-mono">
                     Linux (Ubuntu)
@@ -91,5 +119,5 @@ export function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
