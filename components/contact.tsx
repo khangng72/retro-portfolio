@@ -69,19 +69,19 @@ export function Contact() {
                       rel="noopener noreferrer"
                       className="text-primary hover:underline font-mono"
                     >
-                      https://github.com/khangng72
+                      github.com/khangng72
                     </a>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Linkedin className="h-4 w-4 text-muted-foreground" />
                     <a
-                      href="https://www.linkedin.com/in/khang-nguyen-huu-ab4282257/"
+                      href="https://www.linkedin.com/in/khangng72/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline font-mono"
                     >
-                      https://www.linkedin.com/in/khang-nguyen-huu-ab4282257/
+                      www.linkedin.com/in/khangng72/
                     </a>
                   </div>
 
@@ -100,9 +100,9 @@ export function Contact() {
                 </div>
 
                 <div className="font-mono text-xs text-muted-foreground bg-card p-3 rounded border-l-4 border-primary">
-                  <div>$ whoami</div>
-                  <div className="text-primary">Software Engineer</div>
-                  <div>$ status</div>
+                  <div>$ git config user.name</div>
+                  <div className="text-primary">khangng72</div>
+                  <div>$ git status</div>
                   <div className="text-secondary">
                     Available for opportunities
                   </div>
