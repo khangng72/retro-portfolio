@@ -2,12 +2,30 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Github, Mail, ExternalLink, ArrowDownToLine } from "lucide-react";
+import {
+  Github,
+  Mail,
+  ExternalLink,
+  ArrowDownToLine,
+  CameraIcon,
+  Download,
+} from "lucide-react";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
   const fullText = "Software Engineer";
+
+  const [showDownloadAva, setShowDownloadAva] = useState(false);
+
+  const getAvatar = () => {
+    const link = document.createElement("a");
+    link.href = "./ava.jpg";
+    link.download = "ava.jpg";
+    link.click();
+  };
 
   useEffect(() => {
     let i = 0;
@@ -30,6 +48,39 @@ export function Hero() {
           <div className="font-mono text-sm text-muted-foreground mb-4">
             {"> git checkout portfolio"}
           </div>
+
+          <button
+            className="relative w-fit mx-auto hover:cursor-pointer p-3 rounded-full bg-primary"
+            onPointerEnter={() => setShowDownloadAva(true)}
+            onPointerLeave={() => setShowDownloadAva(false)}
+            onClick={getAvatar}
+          >
+            <div className="bg-white rounded-full">
+              <Image
+                src="./ava.jpg"
+                alt="Avatar"
+                width={250}
+                height={250}
+                objectFit="cover"
+                quality={200}
+                className={cn("mx-auto rounded-full ", {
+                  "opacity-30": showDownloadAva,
+                })}
+              />
+            </div>
+            {showDownloadAva && (
+              <>
+                <div className="rounded-md bg-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-1">
+                  <Download className="w-5 h-5" />
+                </div>
+                <div className="absolute bottom-22 left-1/2 -translate-x-1/2 w-[200px]">
+                  <span className="text-xs text-primary font-mono font-bold">
+                    {"> git clone handsomeness :)"}
+                  </span>
+                </div>
+              </>
+            )}
+          </button>
 
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             Nguyen Huu Khang
